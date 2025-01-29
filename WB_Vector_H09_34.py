@@ -1,12 +1,11 @@
 from manim import *
 
+
 class Vector(Scene):
     def construct(self):
         # Create the axes
         axes = Axes(
-            x_range=[-5, 5, 1],
-            y_range=[-5, 5, 1],
-            axis_config={"color": WHITE}
+            x_range=[-5, 5, 1], y_range=[-5, 5, 1], axis_config={"color": WHITE}
         ).add_coordinates()
 
         # Add labels for the axes
@@ -18,12 +17,20 @@ class Vector(Scene):
         vector_b = [1, -1]
 
         # Create vector arrows
-        arrow_a = Arrow(start=axes.c2p(0, 0), end=axes.c2p(*vector_a), color=BLUE, buff=0)
-        arrow_b = Arrow(start=axes.c2p(0, 0), end=axes.c2p(*vector_b), color=GREEN, buff=0)
+        arrow_a = Arrow(
+            start=axes.c2p(0, 0), end=axes.c2p(*vector_a), color=BLUE, buff=0
+        )
+        arrow_b = Arrow(
+            start=axes.c2p(0, 0), end=axes.c2p(*vector_b), color=GREEN, buff=0
+        )
 
         # Create labels for the vectors
-        label_a = MathTex("\\vec{a} = \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix}").next_to(arrow_a.get_end(), UP)
-        label_b = MathTex("\\vec{b} = \\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix}").next_to(arrow_b.get_end(), DOWN)
+        label_a = MathTex(
+            "\\vec{a} = \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix}"
+        ).next_to(arrow_a.get_end(), UP)
+        label_b = MathTex(
+            "\\vec{b} = \\begin{bmatrix} 1 \\\\ -1 \\end{bmatrix}"
+        ).next_to(arrow_b.get_end(), DOWN)
 
         # Add animations for axes, vectors, and labels
         self.play(Create(axes), Write(x_label), Write(y_label))
@@ -32,7 +39,9 @@ class Vector(Scene):
 
         # Compute resultant vector
         resultant_vector = [vector_a[0] + vector_b[0], vector_a[1] + vector_b[1]]
-        arrow_resultant = Arrow(start=axes.c2p(0, 0), end=axes.c2p(*resultant_vector), color=YELLOW, buff=0)
+        arrow_resultant = Arrow(
+            start=axes.c2p(0, 0), end=axes.c2p(*resultant_vector), color=YELLOW, buff=0
+        )
         label_resultant = MathTex(
             "\\vec{a} + \\vec{b} = \\begin{bmatrix} 4 \\\\ 1 \\end{bmatrix}"
         ).next_to(arrow_resultant.get_end(), RIGHT)
@@ -44,9 +53,6 @@ class Vector(Scene):
         self.wait(2)
 
 
-
-from manim import *
-
 class VectorVisualization1(Scene):
     def construct(self):
         # Create the axes
@@ -57,8 +63,8 @@ class VectorVisualization1(Scene):
             background_line_style={
                 "stroke_color": GRAY,
                 "stroke_width": 1,
-                "stroke_opacity": 0.5
-            }
+                "stroke_opacity": 0.5,
+            },
         ).add_coordinates()
 
         # Add a grid (rooster)
@@ -68,8 +74,8 @@ class VectorVisualization1(Scene):
             background_line_style={
                 "stroke_color": GRAY,
                 "stroke_width": 1,
-                "stroke_opacity": 0.3
-            }
+                "stroke_opacity": 0.3,
+            },
         )
 
         # Define vectors
@@ -77,16 +83,26 @@ class VectorVisualization1(Scene):
         vector_b = [1, 1]
 
         # Create vector arrows
-        arrow_a = Arrow(start=axes.c2p(0, 0), end=axes.c2p(*vector_a), color=BLUE, buff=0)
-        arrow_b = Arrow(start=axes.c2p(0, 0), end=axes.c2p(*vector_b), color=GREEN, buff=0)
+        arrow_a = Arrow(
+            start=axes.c2p(0, 0), end=axes.c2p(*vector_a), color=BLUE, buff=0
+        )
+        arrow_b = Arrow(
+            start=axes.c2p(0, 0), end=axes.c2p(*vector_b), color=GREEN, buff=0
+        )
 
         # Create labels for the vectors
-        label_a = MathTex("\\vec{a} = \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix}").next_to(arrow_a.get_end(), UP)
-        label_b = MathTex("\\vec{b} = \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}").next_to(arrow_b.get_end(), RIGHT)
+        label_a = MathTex(
+            "\\vec{a} = \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix}"
+        ).next_to(arrow_a.get_end(), UP)
+        label_b = MathTex(
+            "\\vec{b} = \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}"
+        ).next_to(arrow_b.get_end(), RIGHT)
 
         # Compute resultant vector
         resultant_vector = [vector_a[0] + vector_b[0], vector_a[1] + vector_b[1]]
-        arrow_resultant = Arrow(start=axes.c2p(0, 0), end=axes.c2p(*resultant_vector), color=YELLOW, buff=0)
+        arrow_resultant = Arrow(
+            start=axes.c2p(0, 0), end=axes.c2p(*resultant_vector), color=YELLOW, buff=0
+        )
         label_resultant = MathTex(
             "\\vec{a} + \\vec{b} = \\begin{bmatrix} 4 \\\\ 3 \\end{bmatrix}"
         ).next_to(arrow_resultant.get_end(), RIGHT)
@@ -98,7 +114,7 @@ class VectorVisualization1(Scene):
             axes.c2p(*resultant_vector),
             axes.c2p(*vector_b),
             color=ORANGE,
-            fill_opacity=0.3
+            fill_opacity=0.3,
         )
 
         # Add animations
@@ -110,6 +126,7 @@ class VectorVisualization1(Scene):
 
         # Hold the final scene
         self.wait(3)
+
 
 class VectorVisualization2(Scene):
     def construct(self):
@@ -117,7 +134,7 @@ class VectorVisualization2(Scene):
         axes = Axes(
             x_range=[0, 5, 1],  # Adjusted to only show the first quadrant
             y_range=[0, 5, 1],
-            axis_config={"color": WHITE}
+            axis_config={"color": WHITE},
         ).add_coordinates()
 
         # Add a grid (rooster)
@@ -127,8 +144,8 @@ class VectorVisualization2(Scene):
             background_line_style={
                 "stroke_color": GRAY,
                 "stroke_width": 1,
-                "stroke_opacity": 0.3
-            }
+                "stroke_opacity": 0.3,
+            },
         )
 
         # Define vectors
@@ -136,16 +153,26 @@ class VectorVisualization2(Scene):
         vector_b = [1, 1]
 
         # Create vector arrows
-        arrow_a = Arrow(start=axes.c2p(0, 0), end=axes.c2p(*vector_a), color=BLUE, buff=0)
-        arrow_b = Arrow(start=axes.c2p(0, 0), end=axes.c2p(*vector_b), color=GREEN, buff=0)
+        arrow_a = Arrow(
+            start=axes.c2p(0, 0), end=axes.c2p(*vector_a), color=BLUE, buff=0
+        )
+        arrow_b = Arrow(
+            start=axes.c2p(0, 0), end=axes.c2p(*vector_b), color=GREEN, buff=0
+        )
 
         # Create labels for the vectors
-        label_a = MathTex("\\vec{a} = \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix}").next_to(arrow_a.get_end(), UP)
-        label_b = MathTex("\\vec{b} = \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}").next_to(arrow_b.get_end(), RIGHT)
+        label_a = MathTex(
+            "\\vec{a} = \\begin{bmatrix} 3 \\\\ 2 \\end{bmatrix}"
+        ).next_to(arrow_a.get_end(), UP)
+        label_b = MathTex(
+            "\\vec{b} = \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}"
+        ).next_to(arrow_b.get_end(), RIGHT)
 
         # Compute resultant vector
         resultant_vector = [vector_a[0] + vector_b[0], vector_a[1] + vector_b[1]]
-        arrow_resultant = Arrow(start=axes.c2p(0, 0), end=axes.c2p(*resultant_vector), color=YELLOW, buff=0)
+        arrow_resultant = Arrow(
+            start=axes.c2p(0, 0), end=axes.c2p(*resultant_vector), color=YELLOW, buff=0
+        )
         label_resultant = MathTex(
             "\\vec{a} + \\vec{b} = \\begin{bmatrix} 4 \\\\ 3 \\end{bmatrix}"
         ).next_to(arrow_resultant.get_end(), RIGHT)
@@ -157,7 +184,7 @@ class VectorVisualization2(Scene):
             axes.c2p(*resultant_vector),
             axes.c2p(*vector_b),
             color=ORANGE,
-            fill_opacity=0.3
+            fill_opacity=0.3,
         )
 
         # Add animations
@@ -171,12 +198,11 @@ class VectorVisualization2(Scene):
         self.wait(3)
 
 
-
 class VectorRepresentation(Scene):
     def construct(self):
         # Define points A and B
         point_A = np.array([2, 3, 0])  # A(2, 3)
-        point_B = np.array([-4, 2, 0]) # B(-4, 2)
+        point_B = np.array([-4, 2, 0])  # B(-4, 2)
 
         # Define vectors
         vector_AB = point_B - point_A
@@ -190,7 +216,7 @@ class VectorRepresentation(Scene):
         B_dot = Dot(point_B, color=BLUE)
         A_label = MathTex("A(2, 3)").next_to(A_dot, UP + RIGHT)
         B_label = MathTex("B(-4, 2)").next_to(B_dot, DOWN + LEFT)
-        
+
         # Add points and labels
         self.play(FadeIn(A_dot, B_dot), Write(A_label), Write(B_label))
 
@@ -205,15 +231,16 @@ class VectorRepresentation(Scene):
             "\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix} ",
             "+ t ",
             "\\begin{bmatrix} -6 \\\\ -1 \\end{bmatrix} ",
-            ", t \\in \\mathbb{R}"
+            ", t \\in \\mathbb{R}",
         ).to_edge(UP)
         self.play(Write(equation))
 
         # Add the direction vector (-6, -1)
-        direction_vector_arrow = Arrow(start=ORIGIN, end=vector_AB, buff=0, color=YELLOW)
+        direction_vector_arrow = Arrow(
+            start=ORIGIN, end=vector_AB, buff=0, color=YELLOW
+        )
         direction_vector_label = MathTex(
-            "\\vec{d} = ",
-            "\\begin{bmatrix} -6 \\\\ -1 \\end{bmatrix}"
+            "\\vec{d} = ", "\\begin{bmatrix} -6 \\\\ -1 \\end{bmatrix}"
         ).next_to(direction_vector_arrow, DOWN, buff=0.5)
         self.play(GrowArrow(direction_vector_arrow), Write(direction_vector_label))
 

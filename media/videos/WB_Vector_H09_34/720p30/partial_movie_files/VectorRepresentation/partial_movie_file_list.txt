@@ -1,7 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:/Users/benjamintelkamp/Desktop/ManimProjects/ProjectVectorMove/media/videos/WB_Vector_H09_34/720p30/partial_movie_files/VectorRepresentation/2016333726_3177241553_2426641204.mp4'
-file 'file:/Users/benjamintelkamp/Desktop/ManimProjects/ProjectVectorMove/media/videos/WB_Vector_H09_34/720p30/partial_movie_files/VectorRepresentation/543634251_2103780760_1244743248.mp4'
-file 'file:/Users/benjamintelkamp/Desktop/ManimProjects/ProjectVectorMove/media/videos/WB_Vector_H09_34/720p30/partial_movie_files/VectorRepresentation/543634251_3439025474_4160949063.mp4'
-file 'file:/Users/benjamintelkamp/Desktop/ManimProjects/ProjectVectorMove/media/videos/WB_Vector_H09_34/720p30/partial_movie_files/VectorRepresentation/543634251_4039266071_2051703316.mp4'
-file 'file:/Users/benjamintelkamp/Desktop/ManimProjects/ProjectVectorMove/media/videos/WB_Vector_H09_34/720p30/partial_movie_files/VectorRepresentation/543634251_126699003_3941702106.mp4'
-file 'file:/Users/benjamintelkamp/Desktop/ManimProjects/ProjectVectorMove/media/videos/WB_Vector_H09_34/720p30/partial_movie_files/VectorRepresentation/543634251_1734327179_1377379030.mp4'
